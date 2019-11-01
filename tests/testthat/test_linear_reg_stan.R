@@ -5,6 +5,7 @@ library(rlang)
 # ------------------------------------------------------------------------------
 
 context("linear regression execution with stan")
+source("helper-objects.R")
 
 num_pred <- c("Sepal.Width", "Petal.Width", "Petal.Length")
 iris_bad_form <- as.formula(Species ~ term)

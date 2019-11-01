@@ -5,15 +5,13 @@ library(tibble)
 
 # ------------------------------------------------------------------------------
 
+source("helper-objects.R")
+
 basic_form <- Surv(time, status) ~ group
 complete_form <- Surv(time) ~ group
 
 surv_basic <- surv_reg() %>% set_engine("survival")
 surv_lnorm <- surv_reg(dist = "lognormal") %>% set_engine("survival")
-
-ctrl <- fit_control(verbosity = 1, catch = FALSE)
-caught_ctrl <- fit_control(verbosity = 1, catch = TRUE)
-quiet_ctrl <- fit_control(verbosity = 0, catch = TRUE)
 
 # ------------------------------------------------------------------------------
 

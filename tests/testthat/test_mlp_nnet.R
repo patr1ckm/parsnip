@@ -4,16 +4,14 @@ library(parsnip)
 # ------------------------------------------------------------------------------
 
 context("simple neural network execution with nnet")
+source("helper-objects.R")
+
 
 num_pred <- names(iris)[1:4]
 
 iris_nnet <-
   mlp(mode = "classification", hidden_units = 5) %>%
   set_engine("nnet")
-
-ctrl <- fit_control(verbosity = 1, catch = FALSE)
-caught_ctrl <- fit_control(verbosity = 1, catch = TRUE)
-quiet_ctrl <- fit_control(verbosity = 0, catch = TRUE)
 
 # ------------------------------------------------------------------------------
 

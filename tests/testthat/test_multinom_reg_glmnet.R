@@ -6,10 +6,7 @@ library(tibble)
 # ------------------------------------------------------------------------------
 
 context("multinom regression execution with glmnet")
-
-ctrl <- fit_control(verbosity = 1, catch = FALSE)
-caught_ctrl <- fit_control(verbosity = 1, catch = TRUE)
-quiet_ctrl <- fit_control(verbosity = 0, catch = TRUE)
+source("helper-objects.R")
 
 rows <- c(1, 51, 101)
 
